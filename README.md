@@ -26,6 +26,16 @@ Or install it yourself as:
   - SESAME_API_KEY
   - SESAME_SSM
 
+https://doc.candyhouse.co/ja/SesameAPI
+
+Sesame ssm is QR code key string.
+
+ex)
+
+```text
+ssm://UI?t=sk&sk=xxxxxxxxxxxx&l=0n=xxxxxxxxxxx
+```
+
 ```ruby
 client = SesameOs2::Client.new(name: 'webapi')
 ```
