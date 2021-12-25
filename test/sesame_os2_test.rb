@@ -8,8 +8,4 @@ class SesameOs2Test < Test::Unit::TestCase
       ::SesameOs2.const_defined?(:VERSION)
     end
   end
-
-  test "something useful" do
-    assert_equal("expected", "actual")
-  end
 end
