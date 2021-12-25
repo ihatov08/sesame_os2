@@ -6,3 +6,7 @@
 /pkg/
 /spec/reports/
 /tmp/
+.env
+Dockerfile
+docker-compose.yml
+Gemfile.lock

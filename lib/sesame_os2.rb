@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "sesame_os2/version"
+require "sesame_os2/version"
+require "sesame_os2/ssm"
+require "sesame_os2/client"
+require "sesame_os2/sign"
 
 module SesameOs2
-  class Error < StandardError; end
-  # Your code goes here...
 end

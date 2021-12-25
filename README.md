@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sesame_os2`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+This gem is wrapper for using with sesame web api with ruby(sesame3, sesame4).
 
 ## Installation
 
@@ -22,7 +22,91 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+- Set environment variables
+  - SESAME_API_KEY
+  - SESAME_SSM
+
+```ruby
+client = SesameOs2::Client.new(name: 'webapi')
+```
+
+It can also be set with arguments.
+
+```ruby
+sesame_api_key = 'your api key'
+sesame_ssm = 'youse sesame ssm'
+
+client =
+  SesameOs2::Client.new(
+    name: 'webapi',
+    api_key: sesame_api_key,
+    ssm: sesame_ssm
+  )
+```
+
+### status
+
+```ruby
+client.status
+=>
+{"batteryPercentage"=>100,
+ "batteryVoltage"=>6.095014662756598,
+ "position"=>223,
+ "CHSesame2Status"=>"unlocked",
+ "timestamp"=>1640393667,
+ "wm2State"=>true}
+```
+
+
+### histories
+
+```ruby
+client.histories
+=>
+[{"recordID"=>312,
+  "type"=>11,
+  "timeStamp"=>1640393671108,
+  "cast_type"=>:driveUnlocked},
+ {"recordID"=>311,
+  "type"=>17,
+  "timeStamp"=>1640393668401,
+  "historyTag"=>"d2ViYXBp",
+  "cast_type"=>nil,
+  "name"=>"webapi"}
+]
+```
+
+You can also pass page or lg arguments.
+
+```ruby
+client.histories(page: 2, lg: 10)
+=>
+[{"recordID"=>318,
+  "type"=>11,
+  "timeStamp"=>1640394507582,
+  "cast_type"=>:driveUnlocked}]
+```
+
+### unlock
+
+```ruby
+client.unlock
+=> {:status=>200}
+```
+
+### lock
+
+```ruby
+client.lock
+=> {:status=>200}
+```
+
+### toggle
+
+```ruby
+client.toggle
+=> {:status=>200}
+```
 
 ## Development
 
@@ -32,4 +116,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sesame_os2.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ihatov08/sesame_os2.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
