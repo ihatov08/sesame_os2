@@ -32,7 +32,7 @@ module SesameOs2
       unpacked_sk[1..16].pack("C*").unpack("H*").first
     end
 
-    def publick_key
+    def public_key
       unpacked_sk[17..80].pack("C*").unpack("H*").first
     end
 
@@ -49,7 +49,7 @@ module SesameOs2
     end
 
     def sk
-      information['sk']
+      information['sk'].gsub(' ', '+')
     end
 
     def unpacked_sk

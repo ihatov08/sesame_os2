@@ -18,10 +18,10 @@ module SesameOs2
       7 => :manualLocked,
       8 => :manualUnlocked,
       9 => :manualElse,
-     10 => :driveLocked,
-     11 => :driveUnlocked,
-     12 => :driveFailed,
-     13 => :bleAdvParameterUpdated,
+      10 => :driveLocked,
+      11 => :driveUnlocked,
+      12 => :driveFailed,
+      13 => :bleAdvParameterUpdated,
     }
 
     COMMAND = {
@@ -85,7 +85,7 @@ module SesameOs2
     end
 
     def encoded64_name
-      Base64.encode64(name)
+      Base64.strict_encode64(name)
     end
 
     def sign
