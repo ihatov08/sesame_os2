@@ -49,7 +49,7 @@ module SesameOs2
     end
 
     def sk
-      information['sk']
+      information['sk'].gsub(' ', '+')
     end
 
     def unpacked_sk
